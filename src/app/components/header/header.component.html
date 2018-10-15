@@ -1,0 +1,10 @@
+<nav>
+    <ng-template [ngIf]="!authService.isAuthenticated()">
+        <li><a routerLink="/register">Register</a></li>
+        <li><a routerLink="/login">Login</a></li>
+    </ng-template>
+    <ng-template [ngIf]="authService.isAuthenticated()">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
+    </ng-template>
+</nav>

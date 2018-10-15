@@ -11,18 +11,14 @@ export class AuthService {
     }
 
     registerUser(userData: {}) {
-        return this.http.post('http://localhost:3000/clients/register', userData).subscribe(
-            response => console.log(response),
-            error => console.log(error)
-        );
+        return this.http.post('http://localhost:3000/clients/register', userData);
     }
 
     loginUser(userData: {}) {
         this.http.post<any>(`http://localhost:3000/auth/login`, userData).subscribe(
             response => {
                 localStorage.setItem('mAToken', response.token);
-                console.log(response.token);
-                this.router.navigate(['/']);
+                this.router.navigate(['/dashboard']);
             },
             error => console.log(error)
         );

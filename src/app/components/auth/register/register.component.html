@@ -1,5 +1,5 @@
-<a routerLink="/login">login</a>
 <div class="">
+    <p *ngIf="status">Thanks for your registration.</p>
     <form (ngSubmit)="onSignup()" #f="ngForm">
         <div class="">
             <label for="firstName"

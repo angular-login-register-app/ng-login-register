@@ -12,6 +12,7 @@ import {Observable} from 'rxjs';
 })
 export class RegisterComponent implements OnInit, CanComponentDeactivate {
     countries: any = ['Malaysia', 'Cyprus', 'Africa', 'United States of America', 'United Kingdom'];
+    status = false;
 
     @ViewChild('f') form: NgForm;
 
@@ -31,7 +32,15 @@ export class RegisterComponent implements OnInit, CanComponentDeactivate {
         const password = this.form.value.password;
         const countryCode = this.form.value.countryCode;
 
-        this.authService.registerUser({last_name, email, country, phone, username, password, first_name});
+        this.authService.registerUser({last_name, email, country, phone, username, password, first_name}).subscribe(
+            (response: any) => {
+                if (response.status === true) {
+                    this.status = true;
+                }
+            },
+            error => console.log(error)
+        );
+        this.form.reset();
     }
 
     canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
