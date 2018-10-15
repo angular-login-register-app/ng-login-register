@@ -1,0 +1,30 @@
+<div class="">
+  <form (ngSubmit)="onSignin(f)" #f="ngForm">
+    <div class="">
+      <label for="username"
+             class="">username</label>
+      <input type="text"
+             class=""
+             id="username"
+             name="username"
+             ngModel=""
+             required=""
+             #username="ngModel">
+    </div>
+    <div class="">
+      <label for="password"
+             class="">Password</label>
+      <input type="password"
+             class=""
+             id="password"
+             name="password"
+             ngModel=""
+             required=""
+             #password="ngModel">
+    </div>
+    <button class="btn btn-primary"
+            type="submit"
+            [disabled]="f.invalid">Sign in
+    </button>
+  </form>
+</div>

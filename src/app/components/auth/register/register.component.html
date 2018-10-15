@@ -1,0 +1,136 @@
+<a routerLink="/login">login</a>
+<div class="">
+    <form (ngSubmit)="onSignup()" #f="ngForm">
+        <div class="">
+            <label for="firstName"
+                   class="">First Name</label>
+            <input type="text"
+                   class=""
+                   id="firstName"
+                   name="firstName"
+                   ngModel=""
+                   required=""
+                   #firstName="ngModel">
+            <p class=""
+               *ngIf="firstName.invalid && firstName.touched">
+                First name is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="lastName"
+                   class="">Last Name</label>
+            <input type="text"
+                   class=""
+                   id="lastName"
+                   name="lastName"
+                   ngModel=""
+                   required=""
+                   #lastName="ngModel">
+            <p class=""
+               *ngIf="lastName.invalid && lastName.touched">
+                Last name is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="username"
+                   class="">Username</label>
+            <input type="text"
+                   class=""
+                   id="username"
+                   name="username"
+                   ngModel=""
+                   required=""
+                   #username="ngModel">
+            <p class=""
+               *ngIf="username.invalid && username.touched">
+                Username is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="email"
+                   class="">E-Mail</label>
+            <input type="email"
+                   class=""
+                   id="email"
+                   name="email"
+                   ngModel=""
+                   required=""
+                   email=""
+                   #email="ngModel">
+            <div *ngIf="email.invalid && email.touched">
+                <p class=""
+                   *ngIf="email.errors['email']">
+                    Please enter a valid email address.
+                </p>
+                <p class=""
+                   *ngIf="email.errors['required']">
+                    Email address is required!
+                </p>
+            </div>
+        </div>
+        <div class="">
+            <label for="password"
+                   class="">Password</label>
+            <input type="password"
+                   class=""
+                   id="password"
+                   name="password"
+                   ngModel=""
+                   required=""
+                   #password="ngModel">
+            <p class=""
+               *ngIf="password.invalid && password.touched">
+                Password is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="country"
+                   class="">Country</label>
+            <select id="country"
+                    name="country"
+                    ngModel=""
+                    #country="ngModel"
+                    required>
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+            </select >
+            <p class="help-block"
+               *ngIf="country.invalid && country.touched">
+                Country is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="countryCode"
+                   class="">Country Code</label>
+            <input type="number"
+                   class=""
+                   id="countryCode"
+                   name="countryCode"
+                   ngModel=""
+                   required=""
+                   #countryCode="ngModel">
+            <p class=""
+               *ngIf="countryCode.invalid && countryCode.touched">
+                Country code is required!
+            </p>
+        </div>
+        <div class="">
+            <label for="phoneNumber"
+                   class="">Phone Number</label>
+            <input type="number"
+                   class=""
+                   id="phoneNumber"
+                   name="phoneNumber"
+                   ngModel=""
+                   required=""
+                   #phoneNumber="ngModel">
+            <p class=""
+               *ngIf="phoneNumber.invalid && phoneNumber.touched">
+                Phone number is required!
+            </p>
+        </div>
+        <button class="btn btn-primary"
+                type="submit"
+                [disabled]="f.invalid">Register
+        </button>
+    </form>
+</div>
