@@ -1,13 +1,16 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend, HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
+    private http: HttpClient;
 
-    constructor(private http: HttpClient, private router: Router) {
+    constructor(private handler: HttpBackend, private router: Router) {
+        // the following line is used to ignore the interceptor for this service
+        this.http = new HttpClient(handler);
     }
 
     registerUser(userData: {}) {

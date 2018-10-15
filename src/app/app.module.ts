@@ -8,6 +8,7 @@ import {AuthModule} from './modules/auth/auth.module';
 import {HttpClientModule} from '@angular/common/http';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {CoreModule} from './modules/core/core.module';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,7 @@ import {CoreModule} from './modules/core/core.module';
         BrowserAnimationsModule,
         MaterialModule
     ],
-    providers: [],
+    providers: [AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
