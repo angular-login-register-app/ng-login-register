@@ -7,6 +7,9 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+    firstName = localStorage.getItem('clientFirstName');
+    lastName = localStorage.getItem('clientLastName');
+    notificationsNum = 4;
 
     constructor(public authService: AuthService) {
     }

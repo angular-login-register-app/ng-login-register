@@ -1,10 +1,122 @@
-<nav>
-    <ng-template [ngIf]="!authService.isAuthenticated()">
-        <li><a routerLink="/register">Register</a></li>
-        <li><a routerLink="/login">Login</a></li>
-    </ng-template>
+<!--<nav>-->
+<!--<ng-template [ngIf]="authService.isAuthenticated()">-->
+<!--<li><a routerLink="/dashboard">Dashboard</a></li>-->
+<!--<li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>-->
+<!--</ng-template>-->
+<!--</nav>-->
+<mat-toolbar>
     <ng-template [ngIf]="authService.isAuthenticated()">
-        <li><a routerLink="/dashboard">Dashboard</a></li>
-        <li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
+        <mat-toolbar-row class="top-header">
+            <a class="logo-button mat-button"
+               routerLink="/dashboard">
+                <img alt="angular"
+                     class="fxprimus-logo-inner"
+                     src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/M35ff50474fc29c64b4ca9d7eee4c30601538727053623">
+            </a>
+            <span class="flex-spacer"></span>
+            <span>Hello, <a class="current-user-name"
+                            [matMenuTriggerFor]="user">{{firstName | titlecase}} {{lastName | titlecase}}
+                </a>
+            </span>
+            <mat-menu #user="matMenu" [overlapTrigger]="false">
+                <a mat-menu-item routerLink="/profile">Profile</a>
+                <a mat-menu-item (click)="onLogout()">Logout</a>
+            </mat-menu>
+            <a class="notifications-bell"
+               [matMenuTriggerFor]="notifications">
+                <span [matBadge]="notificationsNum" matBadgeOverlap="false">
+                    <fa name="bell"></fa>
+                </span>
+            </a>
+            <mat-menu class="notifications-content" #notifications="matMenu" [overlapTrigger]="false">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header appClickStopPropagation>
+                            <mat-panel-title>
+                                The FXPRIMUS PAMM Investment Service
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <button mat-menu-item>VIEW GOALS</button>
+                        <button mat-menu-item>EDIT GOALS</button>
+                        <button mat-menu-item>ADD A NEW GOAL</button>
+                        <button mat-menu-item>MAKE SCENARIO DECISIONS</button>
+                        <button mat-menu-item>BUILD OPTIONS</button>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header appClickStopPropagation>
+                            <mat-panel-title>
+                                Primus Markets Intl MT4 Trading Platform
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <button mat-menu-item>BASE</button>
+                        <button mat-menu-item>MODIFICATIONS</button>
+                        <button mat-menu-item>ATTRIBUTES</button>
+                        <button mat-menu-item>WORKFLOW</button>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header appClickStopPropagation>
+                            <mat-panel-title>
+                                add our support team to your contacts list
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <button mat-menu-item>BASE</button>
+                        <button mat-menu-item>MODIFICATIONS</button>
+                        <button mat-menu-item>ATTRIBUTES</button>
+                        <button mat-menu-item>WORKFLOW</button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-menu>
+        </mat-toolbar-row>
     </ng-template>
-</nav>
+    <mat-toolbar-row class="navbar-header">
+        <ng-template [ngIf]="authService.isAuthenticated()">
+            <a class="mat-button"
+               mat-button=""
+               routerLink="/dashboard"
+               routerLinkActive="active">Dashboard</a>
+            <a class="mat-button"
+               mat-button=""
+               routerLink="/profile"
+               routerLinkActive="active">Profile</a>
+            <a class="mat-button"
+               mat-button=""
+               routerLink="/trading-accounts"
+               routerLinkActive="active">Trading Accounts</a>
+            <a class="mat-button"
+               mat-button=""
+               routerLink="/Wallet"
+               routerLinkActive="active">Wallet</a>
+        </ng-template>
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+            <a class="logo-button mat-button"
+               routerLink="/dashboard">
+                <img alt="angular"
+                     class="fxprimus-logo"
+                     src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/M0f48b13661264231082a8226beef7b641538463337572">
+            </a>
+            <span class="flex-spacer"></span>
+            <a class="mat-button"
+               mat-button=""
+               routerLink="/login"
+               routerLinkActive="active">Login</a>
+            <a class="mat-stroked-button"
+               mat-stroked-button=""
+               routerLink="/register"
+               routerLinkActive="active">Open an Account</a>
+            <a mat-button [matMenuTriggerFor]="language">
+                <img class="en-flag"
+                     src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/M40de175ba50d9abb98cd1215461e957d1538463850715">
+                <span>English</span>
+            </a>
+            <mat-menu #language="matMenu"
+                      [overlapTrigger]="false">
+                <button mat-menu-item>English</button>
+                <button mat-menu-item>中文（简体）</button>
+                <button mat-menu-item>Español</button>
+                <button mat-menu-item>Bahasa Melayu</button>
+                <button mat-menu-item>ภาษาไทย</button>
+                <button mat-menu-item>Tiếng Việt</button>
+            </mat-menu>
+        </ng-template>
+    </mat-toolbar-row>
+</mat-toolbar>

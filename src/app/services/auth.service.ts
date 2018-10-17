@@ -20,6 +20,8 @@ export class AuthService {
     loginUser(userData: {}) {
         this.http.post<any>(`http://localhost:3000/auth/login`, userData).subscribe(
             response => {
+                localStorage.setItem('clientFirstName', response.client.first_name);
+                localStorage.setItem('clientLastName', response.client.last_name);
                 localStorage.setItem('mAToken', response.token);
                 this.router.navigate(['/dashboard']);
             },

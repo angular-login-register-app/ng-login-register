@@ -1,0 +1,76 @@
+/*top header styles*/
+.top-header {
+    height: 105px;
+}
+
+.fxprimus-logo-inner {
+    height: 53px;
+}
+
+.current-user-name {
+    color: rgb(0, 89, 167);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.current-user-name:hover {
+    color: #1976D2;
+}
+
+.notifications-bell {
+    cursor: pointer;
+    padding: 0 25px;
+}
+
+.notifications-bell fa {
+    color: #05152d;
+}
+
+.notifications-bell fa:hover {
+    color: rgba(5,21,45, 0.9);
+}
+
+div.mat-menu-panel.notifications-content{
+    max-width: 500px;
+    min-width: 500px;
+}
+
+mat-panel-title{
+    text-transform: capitalize;
+}
+/*end top header styles*/
+
+.navbar-header {
+    background-color: #05152d;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    color: rgb(176, 176, 176);
+}
+
+.navbar-header .active {
+    color: #ffffff;
+}
+
+.logo-button {
+    display: flex;
+}
+
+.fxprimus-logo {
+    height: 37px;
+}
+
+.flex-spacer {
+    flex: 1 1 auto;
+}
+
+/*end header styles*/
+
+/*flags*/
+.en-flag {
+    margin: 0 12px;
+    height: 23px;
+}
+
+/*end flags*/
