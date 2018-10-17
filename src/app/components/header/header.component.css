@@ -29,17 +29,9 @@
 .notifications-bell fa:hover {
     color: rgba(5,21,45, 0.9);
 }
-
-div.mat-menu-panel.notifications-content{
-    max-width: 500px;
-    min-width: 500px;
-}
-
-mat-panel-title{
-    text-transform: capitalize;
-}
 /*end top header styles*/
 
+/*bottom header styles*/
 .navbar-header {
     background-color: #05152d;
     display: flex;
@@ -65,11 +57,15 @@ mat-panel-title{
     flex: 1 1 auto;
 }
 
-/*end header styles*/
+.open-an-account{
+    margin-right: 12px;
+}
+
+/*end bottom header styles*/
 
 /*flags*/
-.en-flag {
-    margin: 0 12px;
+.flag {
+    margin: 0 12px 0 0;
     height: 23px;
 }
 
