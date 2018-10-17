@@ -1,0 +1,33 @@
+.not-found fa {
+    font-size: 340px;
+    color: #F44336;
+}
+
+h1 {
+    color: #F44336;
+    border-bottom: 5px solid #F44336;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 501px;
+}
+
+h1 span.not-found-code {
+    font-size: 150px;
+}
+
+h1 span.error {
+    font-weight: bold;
+}
+
+p {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.not-found-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

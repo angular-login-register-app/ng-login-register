@@ -5,12 +5,14 @@ import {AuthRoutingModule} from './auth-routing.module';
 import {RegisterComponent} from '../../components/auth/register/register.component';
 import {LoginComponent} from '../../components/auth/login/login.component';
 import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../material/material.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        AuthRoutingModule
+        AuthRoutingModule,
+        MaterialModule
     ],
     declarations: [
         LoginComponent,
