@@ -7,14 +7,16 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-    firstName = localStorage.getItem('clientFirstName');
-    lastName = localStorage.getItem('clientLastName');
+    firstName = '';
+    lastName = '';
     notificationsNum = 4;
 
     constructor(public authService: AuthService) {
     }
 
     ngOnInit() {
+        this.firstName = this.authService.firstName;
+        this.lastName = this.authService.lastName;
     }
 
     onLogout() {

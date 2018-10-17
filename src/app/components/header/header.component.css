@@ -19,7 +19,7 @@
 
 .notifications-bell {
     cursor: pointer;
-    padding: 0 25px;
+    margin: 0 50px 0 40px;
 }
 
 .notifications-bell fa {

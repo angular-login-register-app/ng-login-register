@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
     providedIn: 'root'
 })
 export class AuthService {
+    firstName = localStorage.getItem('clientFirstName');
+    lastName = localStorage.getItem('clientLastName');
     private http: HttpClient;
 
     constructor(private handler: HttpBackend, private router: Router) {

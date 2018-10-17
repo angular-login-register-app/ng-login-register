@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import {MatListModule} from '@angular/material/list';
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
-        MatListModule
+        MatListModule,
+        MatProgressBarModule
     ],
     exports: [
         MatButtonModule,
@@ -45,7 +47,8 @@ import {MatListModule} from '@angular/material/list';
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
-        MatListModule
+        MatListModule,
+        MatProgressBarModule
     ],
     declarations: []
 })

@@ -1,3 +1,64 @@
-<p>
-  dashboard works!
-</p>
+<div class="dashboard main-content">
+    <div class="top-bar">
+        <mat-card>
+            <mat-grid-list [cols]="4" rowHeight="70px" role="list">
+                <mat-grid-tile>
+                    <div class="text-center">
+                        <p class="value">$15.000</p>
+                        <p class="value-title">available</p>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-center">
+                        <p class="value">$15.000</p>
+                        <p class="value-title">total allocated</p>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-center">
+                        <p class="value">$15.000</p>
+                        <p class="value-title">profit</p>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="text-center">
+                        <p class="value">$15.000</p>
+                        <p class="value-title">equity</p>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </div>
+    <mat-grid-list [cols]="4" rowHeight="4:4" role="list">
+        <mat-grid-tile [colspan]="1">
+            <div class="align-left">
+                <mat-card>
+                    <div class="text-center">
+                        <img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/Mc8cc845a21461f35a96526f2abf75c9c1538735600932">
+                        <h3>{{firstName | titlecase}} {{lastName | titlecase}}</h3>
+                    </div>
+                    <p id="profileCompletion">Profile completion <span>{{profileCompletion}}%</span></p>
+                    <mat-progress-bar mode="determinate" [value]="profileCompletion"></mat-progress-bar>
+                    <a class="full-width" mat-button routerLink="/profile">
+                        <fa name="user"></fa>
+                        Complete Your Profile</a>
+
+                    <a class="full-width add-account"
+                       mat-raised-button
+                       routerLink="/register"
+                       color="primary">
+                        <fa name="plus-circle"></fa>
+                        Add an Account</a>
+                </mat-card>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3">
+            <div class="align-right">
+                <img class="img-responsive"
+                     src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/M5f0a24d6d056e01cd0a7ef77038e05a71539582019694">
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <img class="img-responsive margin-top-50"
+         src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/Mfca0850b3f541a63049019bc19c8f4f11539582238129">
+</div>
