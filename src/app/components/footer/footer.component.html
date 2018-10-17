@@ -6,7 +6,7 @@
 <div class="footer-bottom" [ngClass]="{'text-center': !authService.isAuthenticated()}">
     <div class="container">
         <ng-template [ngIf]="!authService.isAuthenticated()">
-            <mat-grid-list cols="7" rowHeight="7:2" class="margin-bottom-20">
+            <mat-grid-list [cols]="7" rowHeight="7:2" class="margin-bottom-20">
                 <mat-grid-tile>
                     <img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/Mf3a1a3e79306482081d4ad1b4797a8421538560039599">
                 </mat-grid-tile>
@@ -29,7 +29,7 @@
                     <img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/Md93f87567a82714308cffc2773cfb3821538560044430">
                 </mat-grid-tile>
             </mat-grid-list>
-            <mat-grid-list cols="4" rowHeight="4:1" class="margin-bottom-20">
+            <mat-grid-list [cols]="4" rowHeight="4:1" class="margin-bottom-20">
                 <mat-grid-tile>
                     <img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cb547ee6ef0e3138273a7d38acc95b3de/projects/Me642693544dc52a5791804a0b612e2fa1538463248102/images/M8beaef78c1f440161156b6265c6853e31538560045084">
                 </mat-grid-tile>

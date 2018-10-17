@@ -13,6 +13,7 @@ import {Observable} from 'rxjs';
 export class RegisterComponent implements OnInit, CanComponentDeactivate {
     countries: any = ['Malaysia', 'Cyprus', 'Africa', 'United States of America', 'United Kingdom'];
     status = false;
+    currentCountry = 'Malaysia';
 
     @ViewChild('f') form: NgForm;
 
@@ -40,7 +41,7 @@ export class RegisterComponent implements OnInit, CanComponentDeactivate {
             },
             error => console.log(error)
         );
-        this.form.reset();
+        this.form.onReset();
     }
 
     canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
