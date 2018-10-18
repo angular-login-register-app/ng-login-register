@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         MatInputModule,
         MatSelectModule,
         MatListModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatTabsModule
     ],
     exports: [
         MatButtonModule,
@@ -48,7 +50,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         MatInputModule,
         MatSelectModule,
         MatListModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatTabsModule
     ],
     declarations: []
 })

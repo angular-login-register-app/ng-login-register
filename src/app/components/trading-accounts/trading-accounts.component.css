@@ -1,0 +1,52 @@
+.trading-accounts {
+    background-color: #F4F6FA;
+}
+.full-width {
+    width: 100%;
+}
+
+.img-responsive {
+    margin: -4px;
+    width: 100%;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.align-left {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.align-left mat-card {
+    width: 85%;
+    height: 88.5%;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+#profileCompletion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-progress-bar {
+    margin-bottom: 30px;
+}
+
+a[mat-raised-button].add-account {
+    background-color: #2C2FAC;
+}
+
+.align-right {
+    position: absolute;
+    right: 0;
+    width: 98.5%;
+    height: 100%;
+}
+
+.align-right mat-card {
+    height: 100%;
+    border: 1px solid rgba(0,0,0,.2);
+}
+

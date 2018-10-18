@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../../services/auth.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -7,16 +6,14 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    firstName = '';
-    lastName = '';
+    firstName = localStorage.getItem('clientFirstName');
+    lastName = localStorage.getItem('clientLastName');
     profileCompletion = 19;
 
-    constructor(private authService: AuthService) {
+    constructor() {
     }
 
     ngOnInit() {
-        this.firstName = this.authService.firstName;
-        this.lastName = this.authService.lastName;
     }
 
 }

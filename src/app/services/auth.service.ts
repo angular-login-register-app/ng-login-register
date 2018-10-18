@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpBackend, HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {Subject} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    firstName = localStorage.getItem('clientFirstName');
-    lastName = localStorage.getItem('clientLastName');
+    firstName = new Subject();
+    lastName = new Subject();
     private http: HttpClient;
 
     constructor(private handler: HttpBackend, private router: Router) {
@@ -25,6 +26,8 @@ export class AuthService {
                 localStorage.setItem('clientFirstName', response.client.first_name);
                 localStorage.setItem('clientLastName', response.client.last_name);
                 localStorage.setItem('mAToken', response.token);
+                this.firstName.next(localStorage.getItem('clientFirstName'));
+                this.lastName.next(localStorage.getItem('clientLastName'));
                 this.router.navigate(['/dashboard']);
             },
             error => console.log(error)
@@ -33,6 +36,8 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem('mAToken');
+        localStorage.removeItem('clientFirstName');
+        localStorage.removeItem('clientLastName');
         this.router.navigate(['/login']);
     }
 
